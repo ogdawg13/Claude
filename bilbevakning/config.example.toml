@@ -1,0 +1,24 @@
+# Kopiera till config.toml och fyll i. Lösenordet läggs INTE här utan i miljövariabeln
+# BILBEVAKNING_MAIL_PASSWORD (för Gmail: ett "applösenord", inte ditt vanliga).
+poll_seconds = 60
+database = "bilar.db"
+
+[mail]
+imap_host = "imap.gmail.com"
+smtp_host = "smtp.gmail.com"
+user = "osc.ols92@gmail.com"
+folder = "INBOX"
+
+[filter]
+max_price = 300000      # kr
+min_year = 2019
+max_mil = 20000          # svenska mil (1 mil = 10 km)
+keywords = ["Tesla", "Kia", "Hyundai", "Volkswagen ID", "Polestar", "Volvo EX", "MG"]  # tom lista = alla
+
+[deal]
+threshold = 0.12        # "bra pris" = minst 12 % under mediankoll för liknande årsmodeller
+min_samples = 5         # så många jämförelseannonser krävs innan priset bedöms
+
+[notify]
+ntfy_topic = "bil_ogge"   # installera ntfy-appen och prenumerera på samma namn
+email_to = "osc.ols92@gmail.com"
